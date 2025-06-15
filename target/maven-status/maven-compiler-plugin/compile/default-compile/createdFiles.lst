@@ -1,6 +1,0 @@
-com\mss\gestor_gastos\GestorGastosApplication.class
-com\mss\gestor_gastos\WebConfig.class
-com\mss\gestor_gastos\model\Despesa.class
-com\mss\gestor_gastos\controller\DespesaController.class
-com\mss\gestor_gastos\repository\DespesaRepository.class
-com\mss\gestor_gastos\service\DespesaService.class

@@ -1,3 +1,18 @@
 README.md
 
 README.MD
+
+# Maven
+target/
+
+# IDEs
+*.iml
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# SO
+.DS_Store
+Thumbs.db
