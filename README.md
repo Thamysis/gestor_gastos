@@ -139,12 +139,34 @@ Clique em **Send**
 
 **Base URL:** http://localhost:8080/api/
 
-| Método | Rota                  | Descrição                           |
-| ------ | --------------------- | ----------------------------------- |
-| GET    | `/api/despesas`       | Lista todas as despesas.            |
-| GET    | `/api/despesas/{id}`  | Busca uma despesa por ID.           |
-| POST   | `/api/despesas`       | Cria uma nova despesa.              |
-| PUT    | `/api/despesas/{id}`  | Atualiza uma despesa existente.     |
-| DELETE | `/api/despesas/{id}`  | Deleta uma despesa.                 |
-| GET    | `/api/despesas/vazio` | Retorna um objeto vazio de despesa. |
+| Método | Rota                           | Descrição                                |
+|--------|--------------------------------|-------------------------------------------|
+| GET    | /api/contasBancarias           | Lista todas as contas bancárias           |
+| GET    | /api/contasBancarias/{id}      | Busca uma conta bancária pelo ID          |
+| POST   | /api/contasBancarias           | Cria uma nova conta bancária              |
+| PUT    | /api/contasBancarias/{id}      | Atualiza uma conta bancária existente     |
+| DELETE | /api/contasBancarias/{id}      | Remove uma conta bancária pelo ID         |
+| GET    | /api/contasPagar               | Lista todas as contas a pagar             |
+| GET    | /api/contasPagar/{id}          | Busca uma conta a pagar pelo ID           |
+| POST   | /api/contasPagar               | Cria uma nova conta a pagar               |
+| PUT    | /api/contasPagar/{id}          | Atualiza uma conta a pagar existente      |
+| DELETE | /api/contasPagar/{id}          | Remove uma conta a pagar pelo ID          |
+| GET    | /api/despesas                  | Lista todas as despesas                   |
+| GET    | /api/despesas/{id}             | Busca uma despesa pelo ID                 |
+| POST   | /api/despesas                  | Cria uma nova despesa                     |
+| PUT    | /api/despesas/{id}             | Atualiza uma despesa existente            |
+| DELETE | /api/despesas/{id}             | Remove uma despesa pelo ID                |
+| GET    | /api/receitas                  | Lista todas as receitas                   |
+| GET    | /api/receitas/{id}             | Busca uma receita pelo ID                 |
+| POST   | /api/receitas                  | Cria uma nova receita                     |
+| PUT    | /api/receitas/{id}             | Atualiza uma receita existente            |
+| DELETE | /api/receitas/{id}             | Remove uma receita pelo ID                |
+| GET    | /api/usuarios                  | Lista todos os usuários                   |
+| GET    | /api/usuarios/{id}             | Busca um usuário pelo ID                  |
+| POST   | /api/usuarios                  | Cria um novo usuário                      |
+| PUT    | /api/usuarios/{id}             | Atualiza um usuário existente             |
+| DELETE | /api/usuarios/{id}             | Remove um usuário pelo ID                 |
+
+
+
 
