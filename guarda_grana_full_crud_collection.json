@@ -1,0 +1,603 @@
+{
+  "info": {
+    "name": "Guarda Grana - API Testes",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Criar Usu\u00e1rio",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/usuarios",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Thamy\",\n  \"email\": \"thamy@example.com\",\n  \"senha\": \"123456\",\n  \"saldoInicial\": 2000\n}"
+        }
+      }
+    },
+    {
+      "name": "Criar Conta Banc\u00e1ria",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/contasBancarias",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "contasBancarias"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Nubank\",\n  \"descricao\": \"Conta corrente principal\",\n  \"categoria\": \"Conta Corrente\",\n  \"saldoAtual\": 2000,\n  \"usuario\": {\n    \"id\": 1\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Criar Despesa",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/despesas",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "despesas"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Mercado\",\n  \"descricao\": \"Compras do m\u00eas\",\n  \"valor\": 450,\n  \"data\": \"2025-06-10\",\n  \"categoria\": \"ALIMENTACAO\",\n  \"formaPagamento\": \"CARTAO_DEBITO\",\n  \"usuario\": {\n    \"id\": 1\n  },\n  \"contaBancaria\": {\n    \"id\": 1\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Criar Receita",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/receitas",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "receitas"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Sal\u00e1rio\",\n  \"descricao\": \"Receita mensal\",\n  \"valor\": 3000,\n  \"data\": \"2025-06-01\",\n  \"categoria\": \"RENDA_FIXA\",\n  \"usuario\": {\n    \"id\": 1\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Criar Conta a Pagar",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/contasPagar",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "contasPagar"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Conta de Luz\",\n  \"descricao\": \"Janeiro\",\n  \"valor\": 150,\n  \"data\": \"2025-06-20\",\n  \"categoria\": \"MORADIA\",\n  \"receberNotificacao\": true,\n  \"usuario\": {\n    \"id\": 1\n  }\n}"
+        }
+      }
+    },
+    {
+      "name": "Listar Usu\u00e1rios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/usuarios",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "usuarios"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar Contas Banc\u00e1rias",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/contasBancarias",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "contasBancarias"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar Despesas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/despesas",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "despesas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar Receitas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/receitas",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "receitas"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar Contas a Pagar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/contasPagar",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "contasPagar"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar Usu\u00e1rio por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/usuarios/1",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "usuarios",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar Conta Banc\u00e1ria por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/contasBancarias/1",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "contasBancarias",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar Despesa por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/despesas/1",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "despesas",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar Receita por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/receitas/1",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "receitas",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Buscar Conta a Pagar por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/contasPagar/1",
+          "host": [
+            "http://localhost:8080"
+          ],
+          "path": [
+            "api",
+            "contasPagar",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PUT usuarios",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/usuarios/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "usuarios",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "DELETE usuarios",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/usuarios/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "usuarios",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "PUT contasBancarias",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/contasBancarias/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "contasBancarias",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "DELETE contasBancarias",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/contasBancarias/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "contasBancarias",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "PUT despesas",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/despesas/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "despesas",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "DELETE despesas",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/despesas/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "despesas",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "PUT receitas",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/receitas/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "receitas",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "DELETE receitas",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/receitas/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "receitas",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "PUT contasPagar",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/contasPagar/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "contasPagar",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    },
+    {
+      "name": "DELETE contasPagar",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/contasPagar/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "protocol": "http",
+          "path": [
+            "api",
+            "contasPagar",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        }
+      }
+    }
+  ]
+}
