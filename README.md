@@ -167,6 +167,6 @@ Clique em **Send**
 | PUT    | /api/usuarios/{id}             | Atualiza um usuário existente             |
 | DELETE | /api/usuarios/{id}             | Remove um usuário pelo ID                 |
 
-
+Na raiz da pasta tem uma coleção para o postman com as várias requisições.
 
 
