@@ -135,18 +135,16 @@ A API deve iniciar em http://localhost:8080.
 
 Clique em **Send**
 
-### ▶️ Requisição GET - Listar todas as despesas
-**Método:** GET
+### ▶️ Requisições
 
-**URL:** http://localhost:8080/api/despesas
+**Base URL:** http://localhost:8080/api/
 
-Clique em **Send** para visualizar a lista.
+| Método | Rota                  | Descrição                           |
+| ------ | --------------------- | ----------------------------------- |
+| GET    | `/api/despesas`       | Lista todas as despesas.            |
+| GET    | `/api/despesas/{id}`  | Busca uma despesa por ID.           |
+| POST   | `/api/despesas`       | Cria uma nova despesa.              |
+| PUT    | `/api/despesas/{id}`  | Atualiza uma despesa existente.     |
+| DELETE | `/api/despesas/{id}`  | Deleta uma despesa.                 |
+| GET    | `/api/despesas/vazio` | Retorna um objeto vazio de despesa. |
 
-### 🔎 Requisição GET por ID
-Método: GET
-
-**Método:** GET
-
-**URL:** http://localhost:8080/api/despesas/1
-
-Substitua 1 pelo ID desejado.
