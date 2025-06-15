@@ -10,6 +10,15 @@ import java.time.LocalDate;
 @Table(name = "receitas")
 public class Receita {
 
+    public enum Categoria {
+        SALARIO,
+        RENDIMENTOS,
+        INVESTIMENTOS,
+        VENDAS,
+        REEMBOLSOS,
+        OUTROS
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,11 +27,12 @@ public class Receita {
 
     private String descricao;
 
-    private String categoria;
-
     private Double valor;
 
     private LocalDate data;
+
+    @Enumerated(EnumType.STRING)
+    private Categoria categoria;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
