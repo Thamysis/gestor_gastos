@@ -5,6 +5,8 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Data
 @Entity
 @Table(name = "despesas")
@@ -30,11 +32,13 @@ public class Despesa {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
+    @JsonIgnoreProperties("despesas")
     private Usuario usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "conta_bancaria_id")
-    private ContaBancaria contaBancaria;
+    //@ManyToOne
+    //@JoinColumn(name = "conta_bancaria_id")
+    //@JsonIgnoreProperties("despesas")
+    //private ContaBancaria contaBancaria;
 
     public enum FormaPagamento {
         DINHEIRO,

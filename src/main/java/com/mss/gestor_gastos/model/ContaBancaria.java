@@ -3,7 +3,9 @@ package com.mss.gestor_gastos.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
+//import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Data
 @Entity
@@ -24,8 +26,10 @@ public class ContaBancaria {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
+    @JsonIgnoreProperties("contasBancarias")
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "contaBancaria", cascade = CascadeType.ALL)
-    private List<Despesa> despesas;
+    //@OneToMany(mappedBy = "contaBancaria", cascade = CascadeType.ALL)
+    //@JsonIgnoreProperties("contasBancaria")
+    //private List<Despesa> despesas;
 }

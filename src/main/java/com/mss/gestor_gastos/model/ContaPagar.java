@@ -5,6 +5,8 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Data
 @Entity
 @Table(name = "contas_pagar")
@@ -28,5 +30,6 @@ public class ContaPagar {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id", nullable = false)
+    @JsonIgnoreProperties("contasPagar")
     private Usuario usuario;
 }

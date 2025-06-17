@@ -5,6 +5,8 @@ import lombok.Data;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Data
 @Entity
 @Table(name = "usuarios")
@@ -26,14 +28,21 @@ public class Usuario {
     private Double saldoAtual;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("usuario")
     private List<Despesa> despesas;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("usuario")
     private List<Receita> receitas;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("usuario")
     private List<ContaBancaria> contasBancarias;
 
     @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("usuario")
     private List<ContaPagar> contasPagar;
 }
+
+
+
