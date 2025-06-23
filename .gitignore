@@ -1,5 +1,6 @@
 # Maven
 target/
+*.class
 
 # IDEs
 *.iml
@@ -12,3 +13,5 @@ target/
 # SO
 .DS_Store
 Thumbs.db
+
+
