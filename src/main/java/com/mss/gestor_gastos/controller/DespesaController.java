@@ -13,43 +13,28 @@ import java.util.List;
 public class DespesaController {
 
     @Autowired
-    private DespesaService despesaService;
+    private DespesaService service;
 
     @GetMapping
     public List<Despesa> listarTodos() {
-        return despesaService.listarTodos();
+        return service.listarTodos();
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Despesa> buscarPorId(@PathVariable Long id) {
-        return despesaService.buscarPorId(id)
+        return service.buscarPorId(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
     public Despesa salvar(@RequestBody Despesa despesa) {
-        return despesaService.salvar(despesa);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Despesa> atualizar(@PathVariable Long id, @RequestBody Despesa despesaAtualizada) {
-        try {
-            Despesa atualizada = despesaService.atualizar(id, despesaAtualizada);
-            return ResponseEntity.ok(atualizada);
-        } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
-        }
+        return service.salvar(despesa);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
-        despesaService.deletar(id);
+        service.deletar(id);
         return ResponseEntity.noContent().build();
-    }
-
-    @GetMapping("/vazio")
-    public Despesa getDespesaVazio() {
-        return new Despesa();
     }
 }

@@ -9,34 +9,24 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class DespesaService{
+public class DespesaService {
 
     @Autowired
-    private DespesaRepository despesaRepository;
+    private DespesaRepository repository;
 
     public List<Despesa> listarTodos() {
-        return despesaRepository.findAll();
+        return repository.findAll();
     }
 
     public Optional<Despesa> buscarPorId(Long id) {
-        return despesaRepository.findById(id);
+        return repository.findById(id);
     }
 
     public Despesa salvar(Despesa despesa) {
-        return despesaRepository.save(despesa);
-    }
-
-    public Despesa atualizar(Long id, Despesa despesaAtualizada) {
-        return despesaRepository.findById(id).map(despesa -> {
-            despesa.setNome(despesaAtualizada.getNome());
-            despesa.setDescricao(despesaAtualizada.getDescricao());
-            despesa.setValor(despesaAtualizada.getValor());
-            despesa.setData(despesaAtualizada.getData());
-            return despesaRepository.save(despesa);
-        }).orElseThrow(() -> new RuntimeException("Recebimento não encontrado"));
+        return repository.save(despesa);
     }
 
     public void deletar(Long id) {
-        despesaRepository.deleteById(id);
+        repository.deleteById(id);
     }
 }

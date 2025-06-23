@@ -2,10 +2,10 @@ package com.mss.gestor_gastos.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Data
 @Entity
@@ -20,53 +20,41 @@ public class Despesa {
 
     private String descricao;
 
+    @Enumerated(EnumType.STRING)
+    private CategoriaDespesa categoria;
+
+    @Enumerated(EnumType.STRING)
+    private FormaPagamento formaPagamento;
+
     private Double valor;
 
     private LocalDate data;
 
-    private String categoria;
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    @JsonIgnoreProperties("despesas")
+    private Usuario usuario;
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    //@ManyToOne
+    //@JoinColumn(name = "conta_bancaria_id")
+    //@JsonIgnoreProperties("despesas")
+    //private ContaBancaria contaBancaria;
+
+    public enum FormaPagamento {
+        DINHEIRO,
+        CARTAO_CREDITO,
+        CARTAO_DEBITO,
+        PIX,
+        TRANSFERENCIA_BANCARIA,
+        BOLETO
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public void setValor(Double valor) {
-        this.valor = valor;
-    }
-
-    public void setData(LocalDate data) {
-        this.data = data;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public Double getValor() {
-        return valor;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public LocalDate getData() {
-        return data;
+    public enum CategoriaDespesa {
+        ALIMENTACAO,
+        MORADIA,
+        TRANSPORTE,
+        LAZER,
+        SAUDE,
+        EDUCACAO
     }
 }
